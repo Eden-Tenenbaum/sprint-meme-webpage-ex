@@ -1,5 +1,6 @@
 'use strict'
 
+// added nothing needed to repose to git
 
 function renderMeme() {
     const canvas = document.getElementById('memeCanvas')

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Meme</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body onload="onInit()">
+    <header>
+        <h1>Ultimate Meme Generator</h1>
+
+        <nav>
+            <a href="#" onclick="showGallery()">gallery</a>
+            <a href="#" onclick="showAbout()">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="meme-gallery" id="memeGallery">
+        </section>
+
+
+        <section class="meme-editor" id="memeEditor"></section>
+        <canvas id="memeCanvas" width="500" height="500"></canvas>
+        <div class="editor-controls">
+            <input type="text" id="textLine" placeholder="Enter your text here" oninput="onTextChange(this.value)">
+        </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+    <script src="JS/memeService.js"></script>
+    <script src="JS/memeController.js"></script>
+    <script src="JS/galleryController.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+
+</html>

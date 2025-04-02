@@ -13,31 +13,26 @@
         <h1>Ultimate Meme Generator</h1>
 
         <nav>
-            <a href="#" onclick="showGallery()">gallery</a>
+            <!-- Need to change to showGallery -->
+            <a href="#" onclick="renderGallery()">gallery</a>
             <a href="#" onclick="showAbout()">About</a>
         </nav>
     </header>
 
     <main>
-        <section class="meme-gallery" id="memeGallery">
+        <section class="meme-gallery">
+            <!-- javascript gets the images -->
         </section>
 
 
-        <section class="meme-editor" id="memeEditor"></section>
-        <canvas id="memeCanvas" width="500" height="500"></canvas>
-        <div class="editor-controls">
-            <input type="text" id="textLine" placeholder="Enter your text here" oninput="onTextChange(this.value)">
-        </div>
+
+        <section class="meme-editor" id="memeEditor">
+            <canvas id="memeCanvas" width="500" height="500"></canvas>
+            <div class="editor-controls">
+                <input type="text" id="textLine" placeholder="Enter your text here" oninput="onTextChange(this.value)">
+            </div>
         </section>
     </main>
-
-
-
-
-
-
-
-
 
     <script src="JS/memeService.js"></script>
     <script src="JS/memeController.js"></script>

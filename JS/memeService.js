@@ -1,7 +1,7 @@
 'use strict'
 
 var gMeme = {
-    selectedImgId: 5,
+    selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [
         {
@@ -12,7 +12,6 @@ var gMeme = {
     ]
 }
 
-
 function getMeme() {
     return gMeme
 }
@@ -22,4 +21,11 @@ function setLineTxt(text) {
 
     // Update the text of the currently selected line
     meme.lines[meme.selectedLineIdx].txt = text
+}
+
+// Updates the selected image ID in the meme data model based on user selection
+function setImg(imgId) {
+    gMeme.selectedImgId = imgId
+    console.log('imgId', imgId)
+
 }

@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+img,
+canvas {
+    max-width: 100%;
+}
+
+
+.meme-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.image-container {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.image-container:hover {
+    opacity: 0.8;
+}
+
+.meme-editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.editor-controls {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+}

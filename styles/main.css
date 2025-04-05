@@ -1,0 +1,18 @@
+/* Main CSS file importing all modules */
+
+/* Base styles */
+@import url('base/reset.css');
+@import url('base/typography.css');
+@import url('base/variables.css');
+
+/* Layout */
+@import url('layout/header.css');
+@import url('layout/main-layout.css');
+@import url('layout/editor.css');
+@import url('layout/gallery.css');
+@import url('layout/about.css');
+
+/* Components */
+@import url('components/buttons.css');
+@import url('components/inputs.css');
+@import url('components/canvas.css');

@@ -1,0 +1,29 @@
+/* Button styling */
+.btn {
+    background: transparent;
+    color: #f0f0f0;
+    border: 2px solid #a64dff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #a64dff;
+    color: white;
+}
+
+.btn-small {
+    font-size: 0.9rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+        min-height: 44px;
+        /* Better touch target */
+    }
+}

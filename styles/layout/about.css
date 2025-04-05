@@ -1,0 +1,51 @@
+/* About section styling */
+.about {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: #1e1e1e;
+    z-index: 99;
+    padding: 4rem 2rem;
+    overflow-y: auto;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.about.open {
+    display: block;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #a64dff;
+}
+
+.about p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.about .btn {
+    margin-top: 2rem;
+}
+
+/* Footer styling */
+.main-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f1f1f;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about {
+        overflow-y: auto;
+        max-height: 100vh;
+        -webkit-overflow-scrolling: touch;
+    }
+}

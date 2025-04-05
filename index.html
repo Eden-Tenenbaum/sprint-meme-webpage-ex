@@ -2,43 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a Meme</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Meme Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
 </head>
 
-<body onload="onInit()">
-    <header>
+<body>
+    <header class="main-header">
         <h1>Ultimate Meme Generator</h1>
-
-        <nav>
-            <!-- Need to change to showGallery -->
-            <a href="#" onclick="renderGallery()">gallery</a>
+        <nav class="main-nav">
+            <a href="#" onclick="renderGallery()">Gallery</a>
             <a href="#" onclick="showAbout()">About</a>
         </nav>
     </header>
 
-    <main>
-        <section class="meme-gallery">
-            <!-- javascript gets the images -->
+    <main class="main-content">
+        <!-- Left Side: Editor -->
+        <section class="editor-wrapper">
+            <div class="editor">
+                <div class="canvas-container">
+                    <canvas id="memeCanvas"></canvas>
+                </div>
+
+                <div class="editor-controls">
+                    <div class="line-controls">
+                        <button onclick="addLine()" class="btn btn-small">➕ Add Line</button>
+                        <button onclick="deleteLine()" class="btn btn-small">🗑️ Delete Line</button>
+                        <button onclick="switchLine()" class="btn btn-small">🔄 Switch Line</button>
+                    </div>
+
+                    <div class="line-controls">
+                        <input type="color" value="#ffffff" onchange="changeTextColor(this.value)" />
+                    </div>
+
+                    <div class="line-controls">
+                        <label for="fontFamily">Font:</label>
+                        <select id="fontFamily" onchange="onChangeFont(this.value)" class="text-input">
+                            <option value="Impact">Impact</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                        </select>
+                    </div>
+
+                    <div class="line-controls">
+                        <button class="btn btn-small" onclick="onAlign('left')">⬅ Align Left</button>
+                        <button class="btn btn-small" onclick="onAlign('center')">⬆ Center</button>
+                        <button class="btn btn-small" onclick="onAlign('right')">➡ Align Right</button>
+                        <button class="btn btn-small" onclick="onMoveLine(-10)">⬆ Move Up</button>
+                        <button class="btn btn-small" onclick="onMoveLine(10)">⬇ Move Down</button>
+                    </div>
+
+                    <div class="line-controls font-size-controls">
+                        <button onclick="changeFontSize(2)" class="btn btn-small">A+</button>
+                        <button onclick="changeFontSize(-2)" class="btn btn-small">A-</button>
+                    </div>
+                    <div class="line-controls">
+                        <button onclick="downloadMeme()" class="btn btn-small">💾 Download</button>
+                    </div>
+
+                    <div class="control-group">
+                        <input type="text" id="textLine" class="text-input" placeholder="Enter your text here"
+                            oninput="onTextChange(this.value)" />
+                    </div>
+                </div>
+            </div>
         </section>
 
-
-
-        <section class="meme-editor" id="memeEditor">
-            <canvas id="memeCanvas" width="500" height="500"></canvas>
-            <div class="editor-controls">
-                <input type="text" id="textLine" placeholder="Enter your text here" oninput="onTextChange(this.value)">
+        <!-- Right Side: Gallery -->
+        <section class="gallery-filter">
+            <div class="gallery-search">
+                <input type="text" id="keywordSearch" placeholder="Search memes..." oninput="onSearchInput(event)" />
             </div>
+            <section class="meme-gallery">
+                <!-- Images rendered by JS -->
+            </section>
         </section>
     </main>
 
-    <script src="JS/memeService.js"></script>
-    <script src="JS/memeController.js"></script>
-    <script src="JS/galleryController.js"></script>
-    <script src="JS/main.js"></script>
-</body>
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Meme Generator</h2>
+        <p>This meme generator allows you to create hilarious custom memes using various templates.</p>
+        <p>Select an image from the gallery, add text, then download your masterpiece. </p>
+        <p>created by Eden Tenenbaum</p>
+        <button class="btn" onclick="hideAbout()">⬅ Back to Generator</button>
+    </section>
 
+    <!-- Scripts -->
+    <script src="js/services/image.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/views/gallery.view.js"></script>
+    <script src="js/views/canvas.view.js"></script>
+    <script src="js/controllers/meme.controller.js"></script>
+    <script src="js/main.js"></script>
+</body>
 
 </html>

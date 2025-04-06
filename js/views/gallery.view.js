@@ -33,7 +33,7 @@ function renderGallery() {
 
             // Add selection to the clicked image
             const clickedImg = this.querySelector('img')
-            clickedImg.classList.add('Åselected')
+            clickedImg.classList.add('selected')
 
             onImgSelect(imgId)
         })
@@ -65,9 +65,10 @@ function renderFilteredGallery(images) {
     let galleryHTML = ''
     images.forEach(img => {
         galleryHTML += `
-        <img src="${img.url}" alt="${img.keywords.join(', ')}">
-            <div class="image-container" data-id="${img.id}">
-            </div>`
+        <div class="image-container" data-id="${img.id}">
+            <img src="${img.url}" alt="${img.keywords.join(', ')}">
+        </div>`
+
     })
 
     elGallery.innerHTML = galleryHTML

@@ -8,6 +8,7 @@ let gMemeImg = new Image();
 function onInit() {
     console.log('Initializing app');
 
+
     // Get canvas
     gCanvas = document.getElementById('memeCanvas');
     if (!gCanvas) {
@@ -38,6 +39,7 @@ function onInit() {
     if (gMeme && gMeme.lines.length > 0) {
         document.getElementById('textLine').value = gMeme.lines[0].txt;
         document.getElementById('fontFamily').value = gMeme.lines[0].font;
+        initCanvasEvents()
     }
 }
 
